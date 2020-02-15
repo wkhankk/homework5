@@ -1,0 +1,288 @@
+body{
+  font-family: 'Raleway', sans-serif; /* Test for this*/
+  margin: 0;
+  padding: 0;
+  font-size: 16pt; /* test for this! Make all sizes em or rem */
+  background-image: url('../images/concrete_seamless.png');
+}
+
+h1{
+  font-size: 2em;
+  text-align: center;
+  line-height: 2;
+}
+
+h2{
+  font-size: 1.5em;
+  text-align: center;
+  padding: 5px;
+}
+
+p {
+  padding: 0 30px;
+}
+
+a.skip{
+  background: white;
+  left: 0;
+  padding: 6px;
+  position: absolute;
+  top: -40px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+}
+
+a.skip:focus{
+  top:20px;
+  color: black;
+  text-decoration-style: solid;
+}
+
+*:focus{
+  border: 2px solid black;
+}
+
+footer{
+  background-color: black;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/*
+Keyframes for animation*/
+
+@-webkit-keyframes logo_wiggle{
+  from{
+    width: 220px;
+    }
+  to {
+    width: 419px;
+}
+}
+
+@keyframes logo_wiggle{
+  from{
+    width: 220px;
+    }
+  to {
+    width: 419px;
+}
+}
+
+
+#logo{
+  -webkit-animation.name:logo_wiggle;
+  animation-name:logo_wiggle;
+  -webkit-animation-duration :3s;
+          animation-duration :3s;
+  -webkit-animation-iteration-content: 1s;
+          animation-iteration-content: 1s;
+
+}
+
+/* Cards! */
+.pricing{
+  display: flex;
+  min-height: 500px;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 50px;
+  
+}
+
+.card {
+  margin: 12px;
+  background: #fff;
+  border-radius: 7px;
+  padding: 0 0 50px 0;
+}
+
+.card > header{
+  background: #288080;
+  border: 2px solid #45ADAD;
+  padding: 20px 0;
+  border-radius: 7px 7px 0 0;
+}
+
+.card > ul{
+  list-style: none;
+  padding: 0;
+}
+
+.card > ul li {
+  width: 90%;
+  margin: 20px auto;
+}
+
+.card button{
+  width: 90%;
+  height: 40px;
+  border: 0;
+  margin-left: 12px;
+  border-radius: 7px;
+  background: #288080;
+  color: white;
+  font-size: 1em;
+}
+
+.card h3{
+  font-size: 4em;
+  color: white;
+  text-align: center;
+}
+
+.card_big{
+
+  -webkit-transform: initial;
+          transform: initial;
+}
+
+/* Gallery! */
+
+.gallery{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 250px;
+  text-align: center;
+}
+
+.gallery > img{
+  flex-direction: column;
+  border: 10px #50C7C7 solid;
+  margin: 10px;
+  width: 270px;
+  height: auto;
+}
+
+/* Navbar */
+header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 3px solid #50C7C7;
+}
+
+.nav_links{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.nav_item a{
+  color: black;
+  text-decoration: none;
+}
+
+.nav_item a:hover, a:focus{
+  color: #50C7C7;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .pricing {
+    display: block;
+    justify-content: center;
+  }
+
+  .gallery{
+    display: block;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 250px;
+    text-align: center;
+  }
+
+  .gallery > img{
+    flex-direction: column;
+    border: 10px #50C7C7 solid;
+    margin: 10px;
+    width: 250px;
+    height: auto;
+  }
+
+}
+
+@media screen and (min-width: 850px){
+
+  /* Cards! */
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: fit-content;
+  }
+
+  .card_big{
+    -webkit-transform: scaleX(1.12);
+            transform: scaleX(1.12);
+  }
+
+  /* Navbar */
+
+  header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+    
+  }
+
+  .nav_links{
+    flex-direction: row;
+    
+  }
+
+  .nav_item a{
+    padding: 10px;
+  }
+
+
+  .gallery{
+    display: block;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 250px;
+    text-align: center;
+  }
+
+  .gallery > img{
+    flex-direction: column;
+    border: 10px #50C7C7 solid;
+    margin: 10px;
+    width: 250px;
+    height: auto;
+  }
+
+}
+
+@media print { 
+  body{
+    background-image: none;
+    -webkit-print-color-adjust: exact !important;
+  }
+  h2{
+    display: none;
+  }
+  .pricing{
+    align-items: flex-start;
+  }
+  .gallery{
+    display: none;
+  }
+  
+  .card {
+    flex-basis: 200px;
+  }
+
+}
+  
+
